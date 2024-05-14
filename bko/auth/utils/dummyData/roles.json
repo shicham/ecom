@@ -1,0 +1,20 @@
+[
+  {
+    "name": "User",
+    "code": "user",
+	"description": "user",
+    "active": true
+  },
+  {
+    "name": "Manager",
+    "code": "manager",
+	"description": "manager",
+    "active": true
+  },
+  {
+    "name": "Admin",
+    "code": "admin",
+	"description": "admin",
+    "active": true
+  }
+ ]
