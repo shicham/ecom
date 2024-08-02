@@ -1,7 +1,7 @@
 import { Menu } from 'lucide-react';
 import Link from "next/link";
 import Image from 'next/image'
-export default function Header({ user, type = 'desktop', menuItems }) {
+export default function Header() {
   return (
 		<header>
 			<Link href="" className="p-2 mr-4 border-2 border-2 border-transparent rounded-full text-primary w-6 h-6 inline-flex relative">
