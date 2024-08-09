@@ -15,7 +15,6 @@ export default function Home() {
 					<div className="table-content">
 						<div className="table-header border-b py-4">
 							<div className="table-filter">
-      
 								<div className="flex items-center justify-between px-8" >
 									<div className="flex flex-1 items-center space-x-2 ">
 										<div className="input-search flex flex-row items-center relative w-96 border-b">
@@ -50,7 +49,7 @@ export default function Home() {
 							</div>
 						</div>
 						<div>
-							tables
+							tabless
 						</div>
 					</div>
 				
