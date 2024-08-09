@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { TableFilterDropdown } from "@/components/table-filter-dropdown"
 import { statuses } from "@/data/products/data"
+import { schema } from "@/data/products/schema"
 
 export default function Home() {
   return (
