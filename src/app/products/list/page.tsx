@@ -8,7 +8,7 @@ import { statuses } from "@/data/products/data"
 
 export default function Home() {
   return (
-    <main className="">
+    
 		<div className="flex grow flex-col min-w-0 z-[0]">
 			<div className="page-title">
 				<div className="flex relative min-h-12 text-1xl shrink left-0 pl-8 pt-[23px] sticky whitespace-nowrap">
@@ -62,6 +62,6 @@ export default function Home() {
 				</div>
 			</div>
 		</div>
-	</main>
+	
   );
 }
