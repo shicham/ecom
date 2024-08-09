@@ -45,9 +45,7 @@ const config = {
 	  width: {
         '256': '16rem',
       },
-	  animation: {
-	    'fadein': 'fade-in 417ms cubic-bezier(0,0,0.2,1) forwards 417ms'
-	  },
+	  
 	  boxShadow: {
 	    'sm1': '0 1px 4px 1px rgba(0,0,0,0.12)'
 	  },
@@ -109,6 +107,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+		'fadein': 'fade-in 417ms cubic-bezier(0,0,0.2,1) forwards 417ms'
       },
     },
   },
