@@ -10,5 +10,16 @@ export default function ProductLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (<main>{children}</main>)
+  return (
+	<main>
+		<div className="flex grow flex-col min-w-0 z-[0]">
+			<div className="page-title">
+				<div className="flex relative min-h-12 text-1xl shrink left-0 pl-8 pt-[23px] sticky whitespace-nowrap">
+					<h1 className="text-clip font-roboto font-semibold">Products</h1>
+				</div>
+			</div>
+		{children}
+		</div>
+	</main>
+	)
 }
