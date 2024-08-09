@@ -13,8 +13,14 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from 'lucide-react';
 type Checked = DropdownMenuCheckboxItemProps["checked"]
-
-export function TableFilterDropdown({items}:Props) {
+interface Item {
+  label: string
+  selected: boolean
+}
+interface ItemsProps {
+  items: Item[]
+}
+export function TableFilterDropdown({items}:ItemsProps) {
   const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
   const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
   const [showPanel, setShowPanel] = React.useState<Checked>(false)
