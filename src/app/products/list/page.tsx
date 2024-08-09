@@ -12,7 +12,7 @@ export default function Home() {
 		<div className="flex grow flex-col min-w-0 z-[0]">
 			<div className="page-title">
 				<div className="flex relative min-h-12 text-1xl shrink left-0 pl-8 pt-[23px] sticky whitespace-nowrap">
-					<h1 className="text-clip font-roboto font-semibold">Contenu de la chaîne</h1>
+					<h1 className="text-clip font-roboto font-semibold">Products</h1>
 				</div>
 			</div>
 			<div className="page-content">

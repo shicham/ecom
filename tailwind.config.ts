@@ -10,6 +10,7 @@ const config = {
 	],
   prefix: "",
   theme: {
+	
     container: {
       center: true,
       padding: "2rem",
@@ -17,7 +18,39 @@ const config = {
         "2xl": "1400px",
       },
     },
+	borderRadius: {
+	  "50p": "50%",
+	},
     extend: {
+	  fontFamily: {
+	    'roboto': ['Roboto']
+	  },
+	  fontSize: {
+      'sm1':['15px', {
+        lineHeight: '24px'
+		}
+	   ],
+	  '1xl':['25px', {
+        lineHeight: '32px'
+		}
+	   ],
+	  '1xs':['13px', {
+        lineHeight: '20px'
+		}
+	   ]	   
+    },
+	  flex: {
+        '0': '0 0 auto'
+      },
+	  width: {
+        '256': '16rem',
+      },
+	  animation: {
+	    'fadein': 'fade-in 417ms cubic-bezier(0,0,0.2,1) forwards 417ms'
+	  },
+	  boxShadow: {
+	    'sm1': '0 1px 4px 1px rgba(0,0,0,0.12)'
+	  },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -54,11 +87,16 @@ const config = {
         },
       },
       borderRadius: {
+	    xl: "12px",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+	    "fade-in": {
+					from: { opacity: 0 },
+					to: { opacity: 1 },
+				},
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
