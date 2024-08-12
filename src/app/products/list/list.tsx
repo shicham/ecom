@@ -4,6 +4,7 @@ import { ListFilter } from 'lucide-react';
 import { MixerHorizontalIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+
 import { TableFilterDropdown } from "@/components/table-filter-dropdown"
 import { statuses } from "@/data/products/data"
 import {
@@ -90,12 +91,12 @@ export function ProductList<TData, TValue>({
 							</div>
 						</div>
       <Table>
-        <TableHeader>
+        <TableHeader >
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
+            <TableRow key={headerGroup.id} >
               {headerGroup.headers.map((header) => {
                 return (
-                  <TableHead key={header.id}>
+                  <TableHead key={header.id} className="first:pl-8 text-[var(--text-secondary)] text-1xs font-medium font-roboto h-[var(--header-height,20px)]">
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -114,17 +115,18 @@ export function ProductList<TData, TValue>({
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
+				className="[&>*:first-child]:pl-8"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} className="align-top ">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
               </TableRow>
             ))
           ) : (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
+            <TableRow className="align-top">
+              <TableCell colSpan={columns.length} className="h-24 text-center ">
                 No results.
               </TableCell>
             </TableRow>
