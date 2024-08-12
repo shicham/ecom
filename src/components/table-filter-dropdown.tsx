@@ -24,7 +24,7 @@ export function TableFilterDropdown({items}:ItemsProps) {
   const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
   const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
   const [showPanel, setShowPanel] = React.useState<Checked>(false)
-  console.log(items)
+
   return (
     
     <DropdownMenu>
