@@ -34,6 +34,7 @@ export const columns: ColumnDef<Playlist>[] = [
 				</Link>
 				<div>
 					<h3 className="text-1xs font-normal text-[var(--text-primary)] mt-3.5">{row.getValue("title")}</h3>
+					<div className="text-xs text-[var(--text-disabled)]">Ajouter un description</div>
 				</div>
 			</div>
 		)

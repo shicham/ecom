@@ -337,6 +337,7 @@
 	--row-height: ;
 	--header-height: 47px;
 	--table-header-text-color:;
+	--text-disabled: #909090;
 	
   }
 
@@ -554,5 +555,8 @@
 	}
 	.table-footer-desc {
 		
+	}
+	.roundedxxl {
+		border-radius: 50%
 	}
 }

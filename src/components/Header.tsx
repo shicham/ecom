@@ -28,7 +28,7 @@ export default function Header() {
 				
 			</div>
 			<div className="flex flex-1 items-center justify-end">
-				<Avatar>
+				<Avatar className="roundedxxl">
 				  <AvatarImage src="/img1.png" alt="@shadcn" />
 				  <AvatarFallback>CN</AvatarFallback>
 				</Avatar>

@@ -35,9 +35,7 @@ export function ProductList<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
 
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  )
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
   const table = useReactTable({
     data,
     columns,
@@ -131,9 +129,9 @@ export function ProductList<TData, TValue>({
 					  </div>
 					  
 					  <div className="table-footer fixed bottom-0 w-full bg-white border-t">
-						<div className="flex flex-row items-center justify-between text-xs text-[var(--text-secondary)] h-[var(--footer-height,48px)] box-border pl-[24px] pr-[16px]">
+						<div className="flex flex-row items-center justify-center text-xs text-[var(--text-secondary)] h-[var(--footer-height,48px)] box-border pl-[24px] pr-[16px]">
 							<span></span>
-							<div className="flex  justify-center items-center">
+							<div className="flex justify-center items-center">
 								<div>Nombre de lignes par page&nbsp;:</div>
 								<div className="ml-[16px] w-[70px] inline-block"> 1 </div>
 								<div className="table-footer-desc mx-[24px]">1&nbsp;–&nbsp;7 sur un grand nombre de résultats</div>
