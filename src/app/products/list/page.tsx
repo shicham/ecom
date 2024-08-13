@@ -2,7 +2,7 @@
 import * as React from "react"
 import Image from "next/image";
 
-import { Product, columns } from "./columns"
+import { Playlist, columns } from "./columns"
 
 
 
@@ -12,7 +12,7 @@ import { ProductList } from "./list"
 export default  function Home() {
   const [products, setProducts] = React.useState([]);
   React.useEffect(() => { getData().then(rs => {setProducts(rs)}) })
-  async function getData(): Promise<Product[]> {
+  async function getData(): Promise<Playlist[]> {
   return [
     {
       id: "345T4564",

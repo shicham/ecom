@@ -92,7 +92,7 @@ export function ProductList<TData, TValue>({
 							
 							
 							{table.getHeaderGroups().map((headerGroup) => (
-								<div key={headerGroup.id} className="flex border-b border-t transition-colors  data-[state=selected]:bg-muted [&>*:first-child]:min-w-[450px]">
+								<div key={headerGroup.id} className="flex border-b border-t   data-[state=selected]:bg-muted [&>*:first-child]:min-w-[450px]">
 								  {headerGroup.headers.map((header) => {
 									return (
 									  <div key={header.id} className="cell-header"><div className="flex"><span className="inline-block align-middle mt-3.5">
