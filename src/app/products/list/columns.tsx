@@ -73,10 +73,12 @@ export const columns: ColumnDef<Product>[] = [
     accessorKey: "category",
     header: "Category",
 	cell: ({ row }) => {
+	  const cat: Category = row.getValue("category")
       return (
         <div className="flex">
           <span className="mt-3.5">
-            {row.getValue("category").title} 
+		     
+            {cat.title}
           </span>
         </div>
       )

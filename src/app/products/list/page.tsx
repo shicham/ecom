@@ -10,7 +10,7 @@ async function getData(): Promise<Product[]> {
       title: "Aspirateur sans fil portable",
 	  category: {
 		id:"34543576a3ER",
-		title: "Apparel & Accessories"
+		title: "Apparel & Accessoriesc"
 	  },
 	  vendor: "Ali express",
 	  orders: 23
