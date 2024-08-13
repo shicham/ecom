@@ -92,10 +92,10 @@ export function ProductList<TData, TValue>({
 							
 							
 							{table.getHeaderGroups().map((headerGroup) => (
-								<div className="flex border-b border-t transition-colors  data-[state=selected]:bg-muted [&>*:first-child]:min-w-[450px]">
+								<div key={headerGroup.id} className="flex border-b border-t transition-colors  data-[state=selected]:bg-muted [&>*:first-child]:min-w-[450px]">
 								  {headerGroup.headers.map((header) => {
 									return (
-									  <div className="cell-header"><div className="flex"><span className="inline-block align-middle mt-3.5">
+									  <div key={header.id} className="cell-header"><div className="flex"><span className="inline-block align-middle mt-3.5">
 										{header.isPlaceholder
 										  ? null
 										  : flexRender(
@@ -113,9 +113,9 @@ export function ProductList<TData, TValue>({
 						{table.getRowModel().rows?.length ? (
 						table.getRowModel().rows.map((row) => (
 						
-						  <div className="table-rows [&>*:first-child]:pl-8">
+						  <div key={row.id} className="table-rows [&>*:first-child]:pl-8">
 							{row.getVisibleCells().map((cell) => (
-							  <div className="cel-body">
+							  <div className="cel-body" key={cell.id}>
 								{flexRender(cell.column.columnDef.cell, cell.getContext())}
 							  </div>
 							))}
