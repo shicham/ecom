@@ -1,55 +1,127 @@
+"use client"
+import * as React from "react"
 import Image from "next/image";
 
 import { Product, columns } from "./columns"
-async function getData(): Promise<Product[]> {
-  return [
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      title: "Aspirateur sans fil portable",
-	  category: {
-		id:"34543576a3ER",
-		title: "Apparel & Accessoriesc"
-	  },
-	  vendor: "Ali express",
-	  orders: 23
-    },
-	{
-      id: "728ed52f",
-      amount: 454,
-      status: "processing",
-      title: "Anneau de Yoga et de Pilates pour femme et fille",
-	  category: {
-		id:"34543576a3ER",
-		title: "Apparel & Accessories"
-	  },
-	  vendor: "Amazon",
-	  orders: 12
-    },
-	{
-      id: "728ed52f",
-      amount: 454,
-      status: "processing",
-      title: "Pilates pour femme et fille",
-	  category: {
-		id:"34543576a3ER",
-		title: "Pilates de Yoga"
-	  },
-	  vendor: "Amazon",
-	  orders: 12
-    },
-  ]
-}
+
 
 
 import { ProductList } from "./list"
 
 
-export default async function Home() {
-  const products = await getData()
+export default  function Home() {
+  const [products, setProducts] = React.useState([]);
+  React.useEffect(() => { getData().then(rs => {setProducts(rs)}) })
+  async function getData(): Promise<Product[]> {
+  return [
+    {
+      id: "345T4564",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Private",
+	  updatedAt: "13 avr. 2024",
+	  countVideos: 54
+    },
+	{
+      id: "45456743",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Publique",
+	  updatedAt: "12 avr. 2024",
+	  countVideos: 12
+    },
+	{
+      id: "345T4564",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Publique",
+	  updatedAt: "10 avr. 2024",
+	  countVideos: 65
+    },
+	{
+      id: "345T4564",
+		title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Private",
+	  updatedAt: "11 jul. 2024",
+	  countVideos: 89
+    },
+	{
+      id: "345T4564",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Publique",
+	  updatedAt: "12 avr. 2024",
+	  countVideos: 12
+    },
+	{
+      id: "345T4564",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Publique",
+	  updatedAt: "12 avr. 2024",
+	  countVideos: 12
+    },
+	{
+      id: "345T4564",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Publique",
+	  updatedAt: "12 avr. 2024",
+	  countVideos: 12
+    },
+	{
+      id: "345T4564",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Publique",
+	  updatedAt: "12 avr. 2024",
+	  countVideos: 12
+    },
+	{
+      id: "345T4564",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Publique",
+	  updatedAt: "12 avr. 2024",
+	  countVideos: 12
+    },
+	{
+      id: "345T4564",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Publique",
+	  updatedAt: "12 avr. 2024",
+	  countVideos: 12
+    },
+	{
+      id: "728ed52f",
+      title:"free musique",
+		description:"free musique",
+      type: "Playlist",
+	  visibilite: "Publique",
+	  updatedAt: "12 avr. 2024",
+	  countVideos: 12
+    },
+  ]
+  
+}
+ async function getDatas() {
+	const products = await getData()
+	return products
+ }
+  //const products = await getData()
   return (
-    
 						<div>
 							<ProductList data={products} columns={columns}/>
 						</div>

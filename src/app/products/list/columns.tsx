@@ -4,24 +4,26 @@ import { ColumnDef } from "@tanstack/react-table"
 import Link from 'next/link'
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Category = {
-	id: string
+export type PlaylistTitle = {
 	title: string
+	description: string
 }
-export type Product = {
+export type Playlist = {
   id: string
-  amount: number
-  status: "pending" | "processing" | "success" | "failed"
+  type: string
+  visibilite: string
   title: string
-  vendor: string
-  orders: number
-  category: Category
+  updatedAt: string
+  countVideos: number
+  title: string
 }
 
-export const columns: ColumnDef<Product>[] = [
+
+
+export const columns: ColumnDef<Playlist>[] = [
   {
     accessorKey: "title",
-    header: "Title",
+    header: "Playlist",
 	cell: ({ row }) => {
 		return (
 			<div className="flex">
@@ -37,48 +39,48 @@ export const columns: ColumnDef<Product>[] = [
 		)
 	}
   },{
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "type",
+    header: "Type",
 	cell: ({ row }) => {
 		return (
 			<div className="flex">
-					<h3 className="text-1xs font-normal text-[var(--text-primary)] mt-3.5">{row.getValue("status")}</h3>
+					<h3 className="text-1xs font-normal text-[var(--text-primary)] mt-3.5">{row.getValue("type")}</h3>
 			</div>
 		)
 	}
   },
   {
-    accessorKey: "amount",
-    header: "Amount",
+    accessorKey: "visibilite",
+    header: "Visibilité",
 	cell: ({ row }) => {
 		return (
 			<div className="flex">
-					<h3 className="text-1xs font-normal text-[var(--text-primary)] mt-3.5">{row.getValue("amount")}</h3>
+					<h3 className="text-1xs font-normal text-[var(--text-primary)] mt-3.5">{row.getValue("visibilite")}</h3>
 			</div>
 		)
 	}
   },
   {
-    accessorKey: "orders",
-    header: "Orders",
+    accessorKey: "updatedAt",
+    header: "Dernière mise à jour",
 	cell: ({ row }) => {
 		return (
 			<div className="flex">
-					<h3 className="text-1xs font-normal text-[var(--text-primary)] mt-3.5">{row.getValue("orders")}</h3>
+					<h3 className="text-1xs font-normal text-[var(--text-primary)] mt-3.5">{row.getValue("updatedAt")}</h3>
 			</div>
 		)
 	}
   },
   {
-    accessorKey: "category",
-    header: "Category",
+    accessorKey: "countVideos",
+    header: "Nombre de vidéos",
 	cell: ({ row }) => {
-	  const cat: Category = row.getValue("category")
+	  //const cat: Category = row.getValue("category")
       return (
         <div className="flex">
           <span className="mt-3.5">
 		     
-            {cat.title}
+            {row.getValue("countVideos")}
           </span>
         </div>
       )

@@ -53,8 +53,8 @@ export function ProductList<TData, TValue>({
     <div className="page-content">
 				<div className="text-primary flex flex-col shrink-0">
 					<div className="table-content">
-						<div className="table-header border-b py-4">
-							<div className="table-filter">
+						<div className="table-header pt-4">
+							<div className="table-filter pb-4">
 								<div className="flex items-center justify-between px-8" >
 									<div className="flex flex-1 items-center space-x-2 ">
 										<div className="input-search flex flex-row items-center relative w-96 border-b">
@@ -72,7 +72,7 @@ export function ProductList<TData, TValue>({
 												</div>
 												</div>
 											</span>
-												<Input 
+												<Input  
 												value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
 												onChange={(event) =>
 													table.getColumn("title")?.setFilterValue(event.target.value)
@@ -89,53 +89,60 @@ export function ProductList<TData, TValue>({
 								</div>
 							
 							</div>
+							
+							
+							{table.getHeaderGroups().map((headerGroup) => (
+								<div className="flex border-b border-t transition-colors  data-[state=selected]:bg-muted [&>*:first-child]:min-w-[450px]">
+								  {headerGroup.headers.map((header) => {
+									return (
+									  <div className="cell-header"><div className="flex"><span className="inline-block align-middle mt-3.5">
+										{header.isPlaceholder
+										  ? null
+										  : flexRender(
+											  header.column.columnDef.header,
+											  header.getContext()
+											)}
+									  </span></div></div>
+									)
+								  })}
+								</div>
+							))}
+							
 						</div>
-      <Table>
-        <TableHeader >
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} >
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id} className="first:pl-8 text-[var(--text-secondary)] text-1xs font-medium font-roboto h-[var(--header-height,20px)]">
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-				className="[&>*:first-child]:pl-8"
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="align-top ">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))
-          ) : (
-            <TableRow className="align-top">
-              <TableCell colSpan={columns.length} className="h-24 text-center ">
-                No results.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
+						<div className="pb-[47px]">
+						{table.getRowModel().rows?.length ? (
+						table.getRowModel().rows.map((row) => (
+						
+						  <div className="table-rows [&>*:first-child]:pl-8">
+							{row.getVisibleCells().map((cell) => (
+							  <div className="cel-body">
+								{flexRender(cell.column.columnDef.cell, cell.getContext())}
+							  </div>
+							))}
+						  </div>
+						))
+					  ) : (
+						<div className="table-rows [&>*:first-child]:pl-8">
+						  <div className="cel-body">
+							No results.
+						  </div>
+						</div>
+					  )}
+					  </div>
+					  
+					  <div className="table-footer fixed bottom-0 w-full bg-white border-t">
+						<div className="flex flex-row items-center justify-between text-xs text-[var(--text-secondary)] h-[var(--footer-height,48px)] box-border pl-[24px] pr-[16px]">
+							<span></span>
+							<div className="flex  justify-center items-center">
+								<div>Nombre de lignes par page&nbsp;:</div>
+								<div className="ml-[16px] w-[70px] inline-block"> 1 </div>
+								<div className="table-footer-desc mx-[24px]">1&nbsp;–&nbsp;7 sur un grand nombre de résultats</div>
+							</div>
+						</div>
+					  </div>
+      
     </div>
 	</div>
-				
-				</div>
+	</div>
   )
 }

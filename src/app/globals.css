@@ -336,6 +336,7 @@
 	--default-fading-animation: fade-in 300ms linear;
 	--row-height: ;
 	--header-height: 47px;
+	--table-header-text-color:;
 	
   }
 
@@ -395,6 +396,10 @@
 	}
 	.header-search.search-layer {
 		@apply relative outline-none;
+	}
+	.anim {
+		opacity: 0;
+		animation: var(--loading-animation) 617ms;
 	}
 	main {
 		@apply flex overflow-auto relative bg-[var(--brand-background-solid)] opacity-0;
@@ -513,5 +518,41 @@
 		color: var(--listbox-color, var(--primary-text-color)) !important;
 		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2) !important;
 	}
+	.cell-header {
+		@apply px-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] first:pl-8 text-[var(--text-secondary)] text-1xs font-medium font-roboto h-[var(--header-height,20px)];
+		min-width: 50px;
+		flex: 1 0 50px;
+		padding: 0 12px;
+		display: flex;
+		position: relative;
+		color: var(--table-header-text-color,var(--text-secondary));
+	}
+	.table-rows {
+		@apply border-b transition-colors hover:bg-[#f9f9f9] data-[state=selected]:bg-muted [&>*:first-child]:pl-8 [&>*:first-child]:min-w-[450px];
+		font-family: "Roboto", "Noto", sans-serif;
+		font-weight: 400;
+		-webkit-font-smoothing: antialiased;
+		font-size: 13px;
+		line-height: 20px;
+		color: var(--text-primary);
+		height: var(--row-height, 84px);
+		display: flex;
+		border-bottom: 1px solid var(--line-divider);
+	}
+	.cel-body{
+		@apply p-2 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] align-top py-[8px] text-wrap;
+		min-width: 50px;
+		flex: 1 0 50px;
+		padding: 8px 12px;
+		display: flex;
+		overflow: hidden;
+		position: relative;
+	}
 	
+	.table-footer {
+		
+	}
+	.table-footer-desc {
+		
+	}
 }
