@@ -11,7 +11,10 @@ export type Product = {
   title: string
   vendor: string
   orders: number
-  category: object
+  category: {
+	id: string
+	title: string
+  }
 }
 
 export const columns: ColumnDef<Product>[] = [
