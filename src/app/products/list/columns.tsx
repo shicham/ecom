@@ -4,6 +4,10 @@ import { ColumnDef } from "@tanstack/react-table"
 import Link from 'next/link'
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
+export type Category = {
+	id: string
+	title: string
+}
 export type Product = {
   id: string
   amount: number
@@ -11,10 +15,7 @@ export type Product = {
   title: string
   vendor: string
   orders: number
-  category: {
-	id: string
-	title: string
-  }
+  category: Category
 }
 
 export const columns: ColumnDef<Product>[] = [
