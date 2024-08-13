@@ -15,7 +15,7 @@ export type Playlist = {
   title: string
   updatedAt: string
   countVideos: number
-  title: string
+  description: string
 }
 
 
