@@ -11,7 +11,7 @@ import { ProductList } from "./list"
 
 export default  function Home() {
   const [products, setProducts] = React.useState<Playlist>([] as any);
-  React.useEffect(() => { getData().then(rs => {setProducts(rs)}) })
+  React.useEffect(() => { getData().then(rs => {setProducts(rs as Playlist[])}) })
   async function getData(): Promise<Playlist[]> {
   return [
     {
