@@ -10,14 +10,14 @@ import { ProductList } from "./list"
 
 
 export default  function Home() {
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = React.useState<Playlist>([]);
   React.useEffect(() => { getData().then(rs => {setProducts(rs)}) })
   async function getData(): Promise<Playlist[]> {
   return [
     {
       id: "345T4564",
       title:"free musique",
-		description:"free musique",
+	  description:"free musique",
       type: "Playlist",
 	  visibilite: "Private",
 	  updatedAt: "13 avr. 2024",
