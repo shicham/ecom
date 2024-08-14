@@ -117,7 +117,7 @@ export default  function Home() {
   
 }
  async function getDatas() {
-	const products = await getData()
+	const products: Playlist[] = await getData()
 	return products
  }
   //const products = await getData()
