@@ -19,7 +19,17 @@ export default function RootLayout({
   return (
 	<html lang="en">
 		<body className={cn(inter.className,"")}>
-			{children}
+			<div className="manager">
+				<div className="page">
+					<div className="main-container">
+						<Header />
+						<div className="flex grow overflow-auto relative z-[-2]">
+							<Sidebar />
+							{children}
+						</div>
+					</div>
+				</div>
+			</div>
 		</body>
 	</html>
   );

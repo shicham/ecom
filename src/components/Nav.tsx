@@ -4,10 +4,8 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 export default function Nav() {
   return (
     <div>
-	    
-		<div className="nav-menu">
+		<div className="nav-menu border-t">
 		<ScrollArea className="h-[208px] w-[16rem]">
-			<hr className="divider" />
 			<ul>
 				<li>
 					<Link href="/home" className="nav-item cursor-pointer">
